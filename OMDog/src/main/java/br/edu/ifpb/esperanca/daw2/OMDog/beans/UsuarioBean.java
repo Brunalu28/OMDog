@@ -1,4 +1,4 @@
-package br.edu.ifpb.esperanca.daw2.ifoto.beans;
+package br.edu.ifpb.esperanca.daw2.OMDog.beans;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -8,7 +8,7 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario;
+import br.edu.ifpb.esperanca.daw2.OMDog.entities.Usuario;
 import br.edu.ifpb.esperanca.daw2.services.UserService;
 
 @ViewScoped

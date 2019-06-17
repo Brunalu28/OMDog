@@ -1,4 +1,4 @@
-package br.edu.ifpb.esperanca.daw2.ifoto.entities;
+package br.edu.ifpb.esperanca.daw2.OMDog.entities;
 
 import java.util.Date;
 import java.util.Set;
@@ -54,6 +54,52 @@ public class Comentario implements Identificavel{
 	public void setRotulos(Set<Rotulo> rotulos) {
 		this.rotulos = rotulos;
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((dataHora == null) ? 0 : dataHora.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((rotulos == null) ? 0 : rotulos.hashCode());
+		result = prime * result + ((texto == null) ? 0 : texto.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Comentario other = (Comentario) obj;
+		if (dataHora == null) {
+			if (other.dataHora != null)
+				return false;
+		} else if (!dataHora.equals(other.dataHora))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (rotulos == null) {
+			if (other.rotulos != null)
+				return false;
+		} else if (!rotulos.equals(other.rotulos))
+			return false;
+		if (texto == null) {
+			if (other.texto != null)
+				return false;
+		} else if (!texto.equals(other.texto))
+			return false;
+		return true;
+	}
+	public Comentario() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
 	
 	
 }

@@ -6,8 +6,8 @@ import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
+import br.edu.ifpb.esperanca.daw2.OMDog.entities.Usuario;
 import br.edu.ifpb.esperanca.daw2.dao.UsuarioDAO;
-import br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario;
 import br.edu.ifpb.esperanca.daw2.util.TransacionalCdi;
 
 @ApplicationScoped

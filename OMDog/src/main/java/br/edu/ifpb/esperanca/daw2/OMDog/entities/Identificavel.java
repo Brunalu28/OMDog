@@ -1,4 +1,4 @@
-package br.edu.ifpb.esperanca.daw2.ifoto.entities;
+package br.edu.ifpb.esperanca.daw2.OMDog.entities;
 
 public interface Identificavel {
 
