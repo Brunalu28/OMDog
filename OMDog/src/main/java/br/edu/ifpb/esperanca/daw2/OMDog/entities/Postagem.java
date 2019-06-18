@@ -36,10 +36,6 @@ public class Postagem implements Identificavel {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataHora;
 	
-	@ManyToMany
-	@JoinTable(name="comentario_rotulo", joinColumns=@JoinColumn(name="id_comentario"), inverseJoinColumns=@JoinColumn(name="id_rotulo"))
-	private Set<Rotulo> rotulos;
-	
 	public Usuario getUsuario() {
 		return usuario;
 	}
@@ -58,13 +54,7 @@ public class Postagem implements Identificavel {
 	public void setDataHora(Date dataHora) {
 		this.dataHora = dataHora;
 	}
-	public Set<Rotulo> getRotulos() {
-		return rotulos;
-	}
-	public void setRotulos(Set<Rotulo> rotulos) {
-		this.rotulos = rotulos;
-	}
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -79,7 +69,6 @@ public class Postagem implements Identificavel {
 		result = prime * result + Arrays.hashCode(conteudo);
 		result = prime * result + ((dataHora == null) ? 0 : dataHora.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((rotulos == null) ? 0 : rotulos.hashCode());
 		result = prime * result + ((usuario == null) ? 0 : usuario.hashCode());
 		return result;
 	}
@@ -103,11 +92,6 @@ public class Postagem implements Identificavel {
 			if (other.id != null)
 				return false;
 		} else if (!id.equals(other.id))
-			return false;
-		if (rotulos == null) {
-			if (other.rotulos != null)
-				return false;
-		} else if (!rotulos.equals(other.rotulos))
 			return false;
 		if (usuario == null) {
 			if (other.usuario != null)
