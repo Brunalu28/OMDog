@@ -1,4 +1,4 @@
-package br.edu.ifpb.esperanca.daw2.OMDog.entities;
+package br.edu.ifpb.esperanca.daw2.services;
 
 import java.io.Serializable;
 import java.util.List;
@@ -8,7 +8,6 @@ import javax.inject.Inject;
 
 import br.edu.ifpb.esperanca.daw2.OMDog.entities.Adotante;
 import br.edu.ifpb.esperanca.daw2.dao.AdotanteDAO;
-import br.edu.ifpb.esperanca.daw2.services.Service;
 import br.edu.ifpb.esperanca.daw2.util.TransacionalCdi;
 
 @ApplicationScoped
