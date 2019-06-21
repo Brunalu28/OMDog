@@ -1,19 +1,17 @@
 package br.edu.ifpb.esperanca.daw2.services;
 
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
-import br.edu.ifpb.esperanca.daw2.OMDog.entities.Pets;
-import br.edu.ifpb.esperanca.daw2.OMDog.entities.Usuario;
-import br.edu.ifpb.esperanca.daw2.dao.UsuarioDAO;
+import br.edu.ifpb.esperanca.daw2.OMDog.entities.Ongs;
+import br.edu.ifpb.esperanca.daw2.dao.OngsDAO;
 import br.edu.ifpb.esperanca.daw2.util.TransacionalCdi;
 
 @ApplicationScoped
-public class UserService implements Serializable, Service<Usuario> {
+public class OngsService implements Serializable, Service<Ongs> {
 
 	/**
 	 * 
@@ -21,15 +19,15 @@ public class UserService implements Serializable, Service<Usuario> {
 	private static final long serialVersionUID = -7803325791425670859L;
 	
 	@Inject
-	private UsuarioDAO userDAO;
+	private OngsDAO OngsDAO;
 	
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#save(br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario)
 	 */
 	@Override
 	@TransacionalCdi
-	public void save(Usuario user) {
-		userDAO.save(user);
+	public void save(Ongs ongs) {
+		OngsDAO.save(ongs);
 	}
 
 	/* (non-Javadoc)
@@ -37,8 +35,8 @@ public class UserService implements Serializable, Service<Usuario> {
 	 */
 	@Override
 	@TransacionalCdi
-	public void update(Usuario user)  {
-			userDAO.update(user);
+	public void update(Ongs ongs)  {
+		OngsDAO.update(ongs);
 	}
 
 	/* (non-Javadoc)
@@ -46,23 +44,24 @@ public class UserService implements Serializable, Service<Usuario> {
 	 */
 	@Override
 	@TransacionalCdi
-	public void remove(Usuario user) {
-		userDAO.remove(user);
+	public void remove(Ongs ongs) {
+		OngsDAO.remove(ongs);
 	}
 
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getByID(long)
 	 */
 	@Override
-	public Usuario getByID(long userId)  {
-			return userDAO.getByID(userId);
+	public Ongs getByID(long OngsId)  {
+			return OngsDAO.getByID(OngsId);
 	}
 
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getAll()
 	 */
 	@Override
-	public List<Usuario> getAll() {
-			return userDAO.getAll();
+	public List<Ongs> getAll() {
+			return OngsDAO.getAll();
 	}
 }
+	

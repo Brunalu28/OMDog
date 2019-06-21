@@ -1,19 +1,18 @@
-package br.edu.ifpb.esperanca.daw2.services;
+package br.edu.ifpb.esperanca.daw2.OMDog.entities;
 
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
-import br.edu.ifpb.esperanca.daw2.OMDog.entities.Pets;
-import br.edu.ifpb.esperanca.daw2.OMDog.entities.Usuario;
-import br.edu.ifpb.esperanca.daw2.dao.UsuarioDAO;
+import br.edu.ifpb.esperanca.daw2.OMDog.entities.Comentario;
+import br.edu.ifpb.esperanca.daw2.dao.ComentarioDAO;
+import br.edu.ifpb.esperanca.daw2.services.Service;
 import br.edu.ifpb.esperanca.daw2.util.TransacionalCdi;
 
 @ApplicationScoped
-public class UserService implements Serializable, Service<Usuario> {
+public class ComentarioService implements Serializable, Service<Comentario> {
 
 	/**
 	 * 
@@ -21,15 +20,15 @@ public class UserService implements Serializable, Service<Usuario> {
 	private static final long serialVersionUID = -7803325791425670859L;
 	
 	@Inject
-	private UsuarioDAO userDAO;
+	private ComentarioDAO ComentarioDAO;
 	
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#save(br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario)
 	 */
 	@Override
 	@TransacionalCdi
-	public void save(Usuario user) {
-		userDAO.save(user);
+	public void save(Comentario comentario) {
+		ComentarioDAO.save(comentario);
 	}
 
 	/* (non-Javadoc)
@@ -37,8 +36,8 @@ public class UserService implements Serializable, Service<Usuario> {
 	 */
 	@Override
 	@TransacionalCdi
-	public void update(Usuario user)  {
-			userDAO.update(user);
+	public void update(Comentario comentario)  {
+		ComentarioDAO.update(comentario);
 	}
 
 	/* (non-Javadoc)
@@ -46,23 +45,23 @@ public class UserService implements Serializable, Service<Usuario> {
 	 */
 	@Override
 	@TransacionalCdi
-	public void remove(Usuario user) {
-		userDAO.remove(user);
+	public void remove(Comentario comentario) {
+		ComentarioDAO.remove(comentario);
 	}
 
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getByID(long)
 	 */
 	@Override
-	public Usuario getByID(long userId)  {
-			return userDAO.getByID(userId);
+	public Comentario getByID(long ComentarioId)  {
+			return ComentarioDAO.getByID(ComentarioId);
 	}
 
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getAll()
 	 */
 	@Override
-	public List<Usuario> getAll() {
-			return userDAO.getAll();
+	public List<Comentario> getAll() {
+			return ComentarioDAO.getAll();
 	}
 }

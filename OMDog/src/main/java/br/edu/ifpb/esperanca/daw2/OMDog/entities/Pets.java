@@ -4,9 +4,6 @@ import java.util.Set;
 
 public class Pets implements Identificavel {
 	
-	@id
-	@GeneratedValue(generator="pets_seq", strategy=GenerationType.SEQUENCE)
-	@SequenceGenerator(name="pets_seq")
 	private Long id;
 	private String nome;
 	private String raça;

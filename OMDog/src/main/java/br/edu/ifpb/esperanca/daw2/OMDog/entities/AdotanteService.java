@@ -1,19 +1,18 @@
-package br.edu.ifpb.esperanca.daw2.services;
+package br.edu.ifpb.esperanca.daw2.OMDog.entities;
 
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
-import br.edu.ifpb.esperanca.daw2.OMDog.entities.Pets;
-import br.edu.ifpb.esperanca.daw2.OMDog.entities.Usuario;
-import br.edu.ifpb.esperanca.daw2.dao.UsuarioDAO;
+import br.edu.ifpb.esperanca.daw2.OMDog.entities.Adotante;
+import br.edu.ifpb.esperanca.daw2.dao.AdotanteDAO;
+import br.edu.ifpb.esperanca.daw2.services.Service;
 import br.edu.ifpb.esperanca.daw2.util.TransacionalCdi;
 
 @ApplicationScoped
-public class UserService implements Serializable, Service<Usuario> {
+public class AdotanteService implements Serializable, Service<Adotante> {
 
 	/**
 	 * 
@@ -21,15 +20,15 @@ public class UserService implements Serializable, Service<Usuario> {
 	private static final long serialVersionUID = -7803325791425670859L;
 	
 	@Inject
-	private UsuarioDAO userDAO;
+	private AdotanteDAO AdotanteDAO;
 	
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#save(br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario)
 	 */
 	@Override
 	@TransacionalCdi
-	public void save(Usuario user) {
-		userDAO.save(user);
+	public void save(Adotante adotante) {
+		AdotanteDAO.save(adotante);
 	}
 
 	/* (non-Javadoc)
@@ -37,8 +36,8 @@ public class UserService implements Serializable, Service<Usuario> {
 	 */
 	@Override
 	@TransacionalCdi
-	public void update(Usuario user)  {
-			userDAO.update(user);
+	public void update(Adotante adotante)  {
+		AdotanteDAO.update(adotante);
 	}
 
 	/* (non-Javadoc)
@@ -46,23 +45,23 @@ public class UserService implements Serializable, Service<Usuario> {
 	 */
 	@Override
 	@TransacionalCdi
-	public void remove(Usuario user) {
-		userDAO.remove(user);
+	public void remove(Adotante adotante) {
+		AdotanteDAO.remove(adotante);
 	}
 
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getByID(long)
 	 */
 	@Override
-	public Usuario getByID(long userId)  {
-			return userDAO.getByID(userId);
+	public Adotante getByID(long AdotanteId)  {
+			return AdotanteDAO.getByID(AdotanteId);
 	}
 
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getAll()
 	 */
 	@Override
-	public List<Usuario> getAll() {
-			return userDAO.getAll();
+	public List<Adotante> getAll() {
+			return AdotanteDAO.getAll();
 	}
 }
