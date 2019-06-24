@@ -3,6 +3,7 @@ package br.edu.ifpb.esperanca.daw2.OMDog.entities;
 import java.awt.Image;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -14,6 +15,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -35,6 +37,10 @@ public class Postagem implements Identificavel {
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataHora;
+	
+	@OneToMany
+	@JoinColumn(name = "id_postagem")
+	private List<Comentario> comentarios;
 	
 	public Usuario getUsuario() {
 		return usuario;
@@ -103,6 +109,12 @@ public class Postagem implements Identificavel {
 	public Postagem() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	public List<Comentario> getComentarios() {
+		return comentarios;
+	}
+	public void setComentarios(List<Comentario> comentarios) {
+		this.comentarios = comentarios;
 	}
 	
 	

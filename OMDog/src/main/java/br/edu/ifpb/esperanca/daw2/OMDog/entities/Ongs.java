@@ -1,11 +1,21 @@
 package br.edu.ifpb.esperanca.daw2.OMDog.entities;
 
+import java.util.List;
+
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
 public class Ongs implements Identificavel {
 	
 	private Long id;
 	private String nome;
 	private String localizaçao;
 	private Integer telefone;
+	
+	@OneToMany
+	@JoinColumn(name="id_ong")
+	private List<Pets> pets;
+	
 	public Long getId() {
 		return id;
 	}
