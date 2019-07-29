@@ -10,6 +10,6 @@ public class PostagemDAO extends DAO<Postagem> {
 	public PostagemDAO() {
 		super(Postagem.class);
 	}
-
+//
 	
 }

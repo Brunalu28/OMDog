@@ -11,5 +11,5 @@ public class AdotanteDAO extends DAO<Adotante> {
 		super(Adotante.class);
 	}
 
-
+//
 }

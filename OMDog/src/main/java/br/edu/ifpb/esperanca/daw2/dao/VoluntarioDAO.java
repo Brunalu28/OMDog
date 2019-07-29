@@ -9,6 +9,6 @@ public class VoluntarioDAO extends DAO<Voluntario> {
 	
 	public VoluntarioDAO() {
 		super(Voluntario.class);
-	}
+	}//
 
 }

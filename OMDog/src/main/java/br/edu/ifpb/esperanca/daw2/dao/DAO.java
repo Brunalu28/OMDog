@@ -49,4 +49,4 @@ public abstract class DAO<E extends Identificavel> {
 		return query.getResultList();
 	}
 
-}
+}//

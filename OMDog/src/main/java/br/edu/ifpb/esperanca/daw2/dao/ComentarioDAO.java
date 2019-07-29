@@ -11,5 +11,5 @@ public class ComentarioDAO extends DAO<Comentario> {
 		super(Comentario.class);
 	}
 
-	
+	//
 }

@@ -10,5 +10,5 @@ public class PetsDAO extends DAO<Pets> {
 	public PetsDAO() {
 		super(Pets.class);
 	}
-
+//
 }
