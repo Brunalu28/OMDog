@@ -15,6 +15,7 @@ public class Adotante extends Usuario{
 	
 	public void setNascimento(Date nascimento) {
 		this.nascimento = nascimento;
+		
 	}
 
 	public List<Pets> getAdotados() {
@@ -58,3 +59,4 @@ public class Adotante extends Usuario{
 
 
 }
+//

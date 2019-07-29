@@ -7,3 +7,5 @@ public interface Identificavel {
 	public void setId(Long id);
 	
 }
+
+//
