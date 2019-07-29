@@ -11,8 +11,5 @@ public class PostagemDAO extends DAO<Postagem> {
 		super(Postagem.class);
 	}
 
-	public List<Postagem> findBy(UsuarioFiltro filtro) {
-		return null;
-	}
 	
 }

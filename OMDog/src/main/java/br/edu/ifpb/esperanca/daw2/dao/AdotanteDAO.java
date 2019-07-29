@@ -11,8 +11,5 @@ public class AdotanteDAO extends DAO<Adotante> {
 		super(Adotante.class);
 	}
 
-	public List<Adotante> findBy(UsuarioFiltro filtro) {
-		return null;
-	}
-	
+
 }

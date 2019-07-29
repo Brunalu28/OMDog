@@ -11,8 +11,4 @@ public class PetsDAO extends DAO<Pets> {
 		super(Pets.class);
 	}
 
-	public List<Pets> findBy(UsuarioFiltro filtro) {
-		return null;
-	}
-	
 }

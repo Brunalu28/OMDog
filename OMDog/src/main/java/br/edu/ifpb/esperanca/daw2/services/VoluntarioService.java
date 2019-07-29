@@ -6,12 +6,12 @@ import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
-import br.edu.ifpb.esperanca.daw2.OMDog.entities.Ongs;
-import br.edu.ifpb.esperanca.daw2.dao.OngsDAO;
+import br.edu.ifpb.esperanca.daw2.OMDog.entities.Voluntario;
+import br.edu.ifpb.esperanca.daw2.dao.VoluntarioDAO;
 import br.edu.ifpb.esperanca.daw2.util.TransacionalCdi;
 
 @ApplicationScoped
-public class OngsService implements Serializable, Service<Ongs> {
+public class VoluntarioService implements Serializable, Service<Voluntario> {
 
 	/**
 	 * 
@@ -19,14 +19,14 @@ public class OngsService implements Serializable, Service<Ongs> {
 	private static final long serialVersionUID = -7803325791425670859L;
 	
 	@Inject
-	private OngsDAO OngsDAO;
+	private VoluntarioDAO OngsDAO;
 	
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#save(br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario)
 	 */
 	@Override
 	@TransacionalCdi
-	public void save(Ongs ongs) {
+	public void save(Voluntario ongs) {
 		OngsDAO.save(ongs);
 	}
 
@@ -35,7 +35,7 @@ public class OngsService implements Serializable, Service<Ongs> {
 	 */
 	@Override
 	@TransacionalCdi
-	public void update(Ongs ongs)  {
+	public void update(Voluntario ongs)  {
 		OngsDAO.update(ongs);
 	}
 
@@ -44,7 +44,7 @@ public class OngsService implements Serializable, Service<Ongs> {
 	 */
 	@Override
 	@TransacionalCdi
-	public void remove(Ongs ongs) {
+	public void remove(Voluntario ongs) {
 		OngsDAO.remove(ongs);
 	}
 
@@ -52,7 +52,7 @@ public class OngsService implements Serializable, Service<Ongs> {
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getByID(long)
 	 */
 	@Override
-	public Ongs getByID(long OngsId)  {
+	public Voluntario getByID(long OngsId)  {
 			return OngsDAO.getByID(OngsId);
 	}
 
@@ -60,7 +60,7 @@ public class OngsService implements Serializable, Service<Ongs> {
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getAll()
 	 */
 	@Override
-	public List<Ongs> getAll() {
+	public List<Voluntario> getAll() {
 			return OngsDAO.getAll();
 	}
 }

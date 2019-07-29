@@ -1,15 +1,13 @@
 package br.edu.ifpb.esperanca.daw2.OMDog.entities;
 
 import java.util.Date;
+import java.util.List;
 
-public class Adotante implements Identificavel{
+public class Adotante extends Usuario{
 	
 
-	private Long id;
-	private String email;
-	private String nome;
 	private Date nascimento;
-	private Integer telefone;
+	private List<Pets>adotados;
 	
 	public Date getNascimento() {
 		return nascimento;
@@ -18,43 +16,21 @@ public class Adotante implements Identificavel{
 	public void setNascimento(Date nascimento) {
 		this.nascimento = nascimento;
 	}
-	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
+
+	public List<Pets> getAdotados() {
+		return adotados;
 	}
 
-	public Integer getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(Integer telefone) {
-		this.telefone = telefone;
+	public void setAdotados(List<Pets> adotados) {
+		this.adotados = adotados;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((adotados == null) ? 0 : adotados.hashCode());
 		result = prime * result + ((nascimento == null) ? 0 : nascimento.hashCode());
-		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
-		result = prime * result + ((telefone == null) ? 0 : telefone.hashCode());
 		return result;
 	}
 
@@ -67,42 +43,18 @@ public class Adotante implements Identificavel{
 		if (getClass() != obj.getClass())
 			return false;
 		Adotante other = (Adotante) obj;
-		if (email == null) {
-			if (other.email != null)
+		if (adotados == null) {
+			if (other.adotados != null)
 				return false;
-		} else if (!email.equals(other.email))
-			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
+		} else if (!adotados.equals(other.adotados))
 			return false;
 		if (nascimento == null) {
 			if (other.nascimento != null)
 				return false;
 		} else if (!nascimento.equals(other.nascimento))
 			return false;
-		if (nome == null) {
-			if (other.nome != null)
-				return false;
-		} else if (!nome.equals(other.nome))
-			return false;
-		if (telefone == null) {
-			if (other.telefone != null)
-				return false;
-		} else if (!telefone.equals(other.telefone))
-			return false;
 		return true;
 	}
 
-	public Adotante() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
-	
-
-
-	
 
 }

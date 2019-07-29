@@ -8,21 +8,21 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import br.edu.ifpb.esperanca.daw2.OMDog.entities.Ongs;
-import br.edu.ifpb.esperanca.daw2.services.OngsService;
+import br.edu.ifpb.esperanca.daw2.OMDog.entities.Voluntario;
+import br.edu.ifpb.esperanca.daw2.services.VoluntarioService;
 
 @ViewScoped
 @Named
-public class OngsBean implements Serializable {
+public class VoluntarioBean implements Serializable {
 
 	@Inject
-	private OngsService service;
+	private VoluntarioService service;
 
-	protected Ongs entidade;
+	protected Voluntario entidade;
 
-	protected Collection<Ongs> entidades;
+	protected Collection<Voluntario> entidades;
 
-	public OngsBean() {
+	public VoluntarioBean() {
 	}
 	
 	@PostConstruct
@@ -31,24 +31,24 @@ public class OngsBean implements Serializable {
 		entidades = getService().getAll();
 	}
 
-	public void remove(Ongs entidade) {
+	public void remove(Voluntario entidade) {
 		getService().remove(entidade);
 		limpar();
 	}
 
-	public Ongs getEntidade() {
+	public Voluntario getEntidade() {
 		return entidade;
 	}
 
-	public void setEntidade(Ongs entidade) {
+	public void setEntidade(Voluntario entidade) {
 		this.entidade = entidade;
 	}
 
-	public Collection<Ongs> getEntidades() {
+	public Collection<Voluntario> getEntidades() {
 		return entidades;
 	}
 
-	public void setEntidades(Collection<Ongs> entidades) {
+	public void setEntidades(Collection<Voluntario> entidades) {
 		this.entidades = entidades;
 	}
 
@@ -67,11 +67,11 @@ public class OngsBean implements Serializable {
 		entidade = newEntidade();
 	}
 
-	protected Ongs newEntidade() {
-		return new Ongs();
+	protected Voluntario newEntidade() {
+		return new Voluntario();
 	}
 
-	public OngsService getService() {
+	public VoluntarioService getService() {
 		return service;
 	}
 

@@ -2,6 +2,9 @@ package br.edu.ifpb.esperanca.daw2.OMDog.entities;
 
 import java.util.Set;
 
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+
 public class Pets implements Identificavel {
 	
 	private Long id;
@@ -10,7 +13,9 @@ public class Pets implements Identificavel {
 	private String sexo;
 	private String localizaçao;
 	
-	public Set<Ongs>possui;
+	@ManyToMany
+	@JoinTable(name="voluntario_pet")
+	public Set<Voluntario> possui;
 
 	public Long getId() {
 		return id;
@@ -52,11 +57,11 @@ public class Pets implements Identificavel {
 		this.localizaçao = localizaçao;
 	}
 
-	public Set<Ongs> getPossui() {
+	public Set<Voluntario> getPossui() {
 		return possui;
 	}
 
-	public void setPossui(Set<Ongs> possui) {
+	public void setPossui(Set<Voluntario> possui) {
 		this.possui = possui;
 	}
 

@@ -11,8 +11,5 @@ public class ComentarioDAO extends DAO<Comentario> {
 		super(Comentario.class);
 	}
 
-	public List<Comentario> findBy(UsuarioFiltro filtro) {
-		return null;
-	}
 	
 }

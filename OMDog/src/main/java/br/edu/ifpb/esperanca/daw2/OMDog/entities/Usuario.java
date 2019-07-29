@@ -8,12 +8,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
 @Entity
-public abstract class Usuario implements Identificavel {
+@Inheritance(strategy=InheritanceType.JOINED)
+public class Usuario implements Identificavel {
 
 	@Id
 	@GeneratedValue(generator="usuario_seq", strategy=GenerationType.SEQUENCE)
@@ -24,8 +27,7 @@ public abstract class Usuario implements Identificavel {
 	private Date nascimento;
 	private Integer telefone;
 	
-	@OneToMany
-	@JoinColumn(name ="id_usuario")
+	@OneToMany(mappedBy="usuario")
 	private List<Postagem> postagens;
 	
 	public Date getNascimento() {
@@ -112,10 +114,6 @@ public abstract class Usuario implements Identificavel {
 		return true;
 	}
 
-	public Usuario() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 	
 	
 	
