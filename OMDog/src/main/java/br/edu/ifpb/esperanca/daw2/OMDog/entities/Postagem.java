@@ -106,20 +106,17 @@ public class Postagem implements Identificavel {
 			return false;
 		return true;
 	}
-	public Postagem() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	
 	public List<Comentario> getComentarios() {
 		return comentarios;
 	}
 	public void setComentarios(List<Comentario> comentarios) {
 		this.comentarios = comentarios;
 	}
-	
-	
-	
+	public Postagem() {
+		super();
+		
+	}
 	
 }
-//
-//
+

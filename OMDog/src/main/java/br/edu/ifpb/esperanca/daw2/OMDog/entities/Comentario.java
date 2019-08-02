@@ -82,11 +82,10 @@ public class Comentario implements Identificavel{
 	}
 	public Comentario() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	
 	
 }
-//
-//
+

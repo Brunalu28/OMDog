@@ -3,9 +3,11 @@ package br.edu.ifpb.esperanca.daw2.OMDog.entities;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Adotante extends Usuario{
 	
-
 	private Date nascimento;
 	private List<Pets>adotados;
 	
@@ -59,5 +61,3 @@ public class Adotante extends Usuario{
 
 
 }
-//
-//

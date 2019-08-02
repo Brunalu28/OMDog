@@ -2,11 +2,20 @@ package br.edu.ifpb.esperanca.daw2.OMDog.entities;
 
 import java.util.Set;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.SequenceGenerator;
 
+@Entity
 public class Pets implements Identificavel {
 	
+	@Id
+	@GeneratedValue(generator="pets_seq", strategy=GenerationType.SEQUENCE)
+	@SequenceGenerator(name="pets_seq")
 	private Long id;
 	private String nome;
 	private String raça;
@@ -122,7 +131,7 @@ public class Pets implements Identificavel {
 
 	public Pets() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 
@@ -130,4 +139,4 @@ public class Pets implements Identificavel {
 	
 
 }
-////
+
