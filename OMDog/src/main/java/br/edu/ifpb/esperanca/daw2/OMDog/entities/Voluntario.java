@@ -1,5 +1,6 @@
 package br.edu.ifpb.esperanca.daw2.OMDog.entities;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -9,6 +10,7 @@ import javax.persistence.ManyToMany;
 public class Voluntario extends Usuario {
 	
 	private String localizaçao;
+	List<Pets>paraAdoçao;
 	
 	@ManyToMany(mappedBy="possui")
 	private Set<Pets> pets;	
