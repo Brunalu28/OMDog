@@ -23,11 +23,17 @@ public class PetsTestes {
 			petss.add(p);
 		}
 		System.out.println(petss);
-		Collections.sort(petss);
 		System.out.println(petss);
 		
+		
+		Pets a = new Pets();
+		a.setLocalizaçao("Ong das Patinhas");
+		
+
+
+		}
+
 	}
 
 	
 	
-}
