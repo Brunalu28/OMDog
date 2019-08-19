@@ -1,6 +1,7 @@
 package br.edu.ifpb.esperanca.daw2.OMDog.testes;
 
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.DisplayName;
@@ -16,7 +17,6 @@ public class UsuarioTestes {
 	@DisplayName("Teste classe Usuario")
 	public void adicionaUsuario() {
 		UserService service = new UserService();
-
 		Usuario u = new Usuario();
 		u.setNome("a");
 		service.save(u);
@@ -26,11 +26,22 @@ public class UsuarioTestes {
 		Usuario u2 = service.getByID(u.getId());
 		
 		assertEquals(u, u2);
+			
+		service.update(u);
 		
+		Usuario u3 = service.getByID(0);
 		
-		service.update(user);
+		assertEquals("Ana", u3.getNome());	
+		
 		
 		service.remove(u2);
+		
+		Usuario u4 = service.getByID(0);
+		
+		assertNull(u4);
+		
+		
+		
 
 	}
 }

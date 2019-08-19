@@ -5,6 +5,10 @@ import org.junit.jupiter.api.Test;
 import br.edu.ifpb.esperanca.daw2.OMDog.entities.Pets;
 import br.edu.ifpb.esperanca.daw2.services.PetsService;
 
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -18,26 +22,32 @@ public class PetsTestes {
 	@DisplayName("Teste classe Pets")
 	
 	public void adicionaPet() {
-		List<Pets> petss = new ArrayList<Pets>();
-		for (int i = 0; i < 100; i++) {
-			Pets p = new Pets();
-			p.setNome("a"+(100-i));
-			petss.add(p);
-		}
-		System.out.println(petss);
-		System.out.println(petss);
-		
 		PetsService service = new PetsService();
-		service.save(p);
+			Pets p = new Pets();
+			p.setLocalizaçao("Ong das Patinhas");
+			service.save(p);
+			
+			assertNotNull(p.getId());
+			
+			Pets p2 = service.getByID(p.getId());
+			assertEquals(p, p2);
+			
+			service.update(p);
+			
+			Pets p3 = service.getByID(0);
+			
+			assertEquals("Casa da Bruna", p3.getLocalizaçao());
+			
+			service.remove(p2);
+			
+			Pets p4 = service.getByID(0);
+			
+			assertNull(p4);
+			
+			
+		}
 		
-		Pets a = new Pets();
-		a.setLocalizaçao("Ong das Patinhas");
-
-
-
 		}
 
-	}
+	
 
-	
-	
