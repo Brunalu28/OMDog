@@ -3,6 +3,8 @@ package br.edu.ifpb.esperanca.daw2.OMDog.testes;
 import org.junit.jupiter.api.Test;
 
 import br.edu.ifpb.esperanca.daw2.OMDog.entities.Pets;
+import br.edu.ifpb.esperanca.daw2.services.PetsService;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -25,10 +27,12 @@ public class PetsTestes {
 		System.out.println(petss);
 		System.out.println(petss);
 		
+		PetsService service = new PetsService();
+		service.save(p);
 		
 		Pets a = new Pets();
 		a.setLocalizaçao("Ong das Patinhas");
-		
+
 
 
 		}
