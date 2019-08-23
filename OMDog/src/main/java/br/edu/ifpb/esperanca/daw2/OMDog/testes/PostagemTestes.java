@@ -17,7 +17,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.DisplayName;
 
-@DisplayName("Um teste para a classe Pets")
+@DisplayName("Um teste para a classe Postagem")
 public class PostagemTestes {
 	
 	@Test
