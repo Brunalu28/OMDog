@@ -26,7 +26,7 @@ public class PostagemTestes {
 	public void adicionaPostagem() {
 		PostagemService service = new PostagemService();
 			Postagem g = new Postagem();
-			g.getConteudo();
+			g.setConteudo(null);
 			service.save(g);
 			
 			assertNotNull(g.getId());

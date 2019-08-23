@@ -25,7 +25,7 @@ public class VoluntarioTestes {
 	public void adicionaPet() {
 		VoluntarioService service = new VoluntarioService();
 			Voluntario v = new Voluntario();
-			v.getTelefone();
+			v.setTelefone(9998889);
 			service.save(v);
 			
 			assertNotNull(v.getId());

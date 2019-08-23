@@ -24,7 +24,7 @@ public class ComentarioTestes {
 	public void adicionacomentario() {
 		ComentarioService service = new ComentarioService();
 			Comentario c = new Comentario();
-			c.getTexto();
+			c.setTexto("Fofo dms, quero");
 			service.save(c);
 			
 			assertNotNull(c.getId());

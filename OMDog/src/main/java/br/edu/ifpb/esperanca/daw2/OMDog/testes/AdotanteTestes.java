@@ -24,7 +24,7 @@ public class AdotanteTestes {
 	public void adicionaAdotante() {
 		AdotanteService service = new AdotanteService();
 			Adotante a = new Adotante();
-			a.getEmail();
+			a.setEmail("bluiza747@gmail.com");
 			service.save(a);
 			
 			assertNotNull(a.getId());
