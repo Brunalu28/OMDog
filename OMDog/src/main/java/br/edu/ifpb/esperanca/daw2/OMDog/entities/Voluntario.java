@@ -4,13 +4,18 @@ import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Voluntario extends Usuario {
 	
 	private String localizaçao;
-	List<Pets>paraAdoçao;
+	
+	@OneToMany
+	@JoinColumn(name = "id_Voluntario")
+	private List<Pets>paraAdoçao;
 	
 	@ManyToMany(mappedBy="possui")
 	private Set<Pets> pets;	

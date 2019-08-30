@@ -24,7 +24,7 @@ public class Pets implements Identificavel {
 	
 	@ManyToMany
 	@JoinTable(name="voluntario_pet")
-	public Set<Voluntario> possui;
+	private Set<Voluntario> possui;
 
 	public Long getId() {
 		return id;
