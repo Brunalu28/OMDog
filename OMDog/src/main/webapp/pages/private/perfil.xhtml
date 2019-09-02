@@ -4,7 +4,7 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<title>Perfil </title>
+	<title> Perfil do usuario </title>
 </h:head>
 
 
@@ -19,6 +19,10 @@
 			<f:facet name="header">
 				<h:outputText value="Usuário" />
 			</f:facet>
+			
+			<p:outputLabel value="Id: " for="idField" />
+			<p:inputText id="idField" value="#{usuarioBean.entidade.id}"
+				label="id" style="width:350px" />
 
 			<p:outputLabel value="Nome: " for="nomeField" />
 			<p:inputText id="nomeField" value="#{usuarioBean.entidade.nome}"
@@ -26,7 +30,7 @@
 
 			<p:outputLabel value="E-mail: " for="emailField" />
 			<p:inputText id="emailField" value="#{usuarioBean.entidade.email}"
-				label="Nome" style="width:350px" />
+				label="email" style="width:350px" />
 
 			<p:outputLabel value="Nascimento: " for="nascimentoField" />
 			<p:calendar id="nascimentoField"
