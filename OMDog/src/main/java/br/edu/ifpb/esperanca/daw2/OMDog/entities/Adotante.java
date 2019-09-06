@@ -4,11 +4,16 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Adotante extends Usuario{
 	
 	private Date nascimento;
+	
+	@OneToMany
+	@JoinColumn(name = "id_adotante")
 	private List<Pets>adotados;
 	
 	public Date getNascimento() {

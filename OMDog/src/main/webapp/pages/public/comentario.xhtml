@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title> comentario </title>
+</h:head>
+
+
+<h:body>
+	<p:messages />
+
+	<h:form>
+		<p:panelGrid columns="2" >
+			<f:facet name="caption">
+				<h:outputText value="Filtros" />
+			</f:facet>
+			<f:facet name="header">
+				<h:outputText value="comentario" />
+			</f:facet>
+			
+			<p:outputLabel value="Id: " for="idField" />
+			<p:inputText id="idField" value="#{comentarioBean.entidade.id}"
+				label="id" style="width:350px" />
+
+			<p:outputLabel value="Data e Hora: " for="datahoraField" />
+			<p:inputText id="datahoraField" value="#{comentarioBean.entidade.datahora}"
+				label="datahora" style="width:350px" />
+
+			<p:outputLabel value="Texto: " for="textoField" />
+			<p:inputText id="textoField" value="#{comentarioBean.entidade.texto}"
+				label="texto" style="width:350px" />
+
+
+			<p:commandButton id="btnNovo" value="Novo"
+				action="#{comentarioBean.save()}" ajax="false" />
+			<p:commandButton id="btnLimpar" value="Limpar"
+				action="#{comentarioBean.limpar()}" ajax="false" />
+		</p:panelGrid>
+
+
+		<p:dataTable id="dataTableEntidades" border="1" var="entidade"
+			value="#{comentarioBean.entidades}">
+			<p:column>
+				<f:facet name="header">ID</f:facet>
+				<h:outputText value="#{entidade.id}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">Datahora</f:facet>
+				<h:outputText value="#{entidade.datahora}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">Texto</f:facet>
+				<h:outputText value="#{entidade.texto}" />
+			</p:column>
+			
+			<p:column>
+				<f:facet name="header">Opções</f:facet>
+				<p:commandButton value="Remover" ajax="false"
+					action="#{comentarioBean.remove(entidade)}"></p:commandButton>
+				<p:commandButton value="Editar" ajax="false"
+					action="#{comentarioBean.editar(entidade.id)}"></p:commandButton>
+			</p:column>
+		</p:dataTable>
+	</h:form>
+</h:body>
+</html>

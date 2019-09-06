@@ -23,7 +23,7 @@ public class ComentarioTestes {
 	
 	public void adicionacomentario() {
 		ComentarioService service = new ComentarioService();
-			Comentario c = new Comentario();
+			Comentario c = new Comentario(); 
 			c.setTexto("Fofo dms, quero");
 			service.save(c);
 			
