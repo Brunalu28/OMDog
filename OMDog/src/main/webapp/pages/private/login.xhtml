@@ -4,7 +4,7 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<title> Login </title>
+	<title> Login do Usuario </title>
 </h:head>
 
 
@@ -19,6 +19,10 @@
 			<f:facet name="header">
 				<h:outputText value="Usuário" />
 			</f:facet>
+			
+			<p:outputLabel value="Id: " for="idField" />
+			<p:inputText id="idField" value="#{usuarioBean.entidade.id}"
+				label="id" style="width:350px" />
 
 			<p:outputLabel value="Nome: " for="nomeField" />
 			<p:inputText id="nomeField" value="#{usuarioBean.entidade.nome}"
@@ -28,9 +32,9 @@
 			<p:inputText id="emailField" value="#{usuarioBean.entidade.email}"
 				label="email" style="width:350px" />
 
-			<p:outputLabel value="Senha: " for="senhaField" />
-			<p:calendar id="senhaField"
-				value="#{usuarioBean.entidade.senha}" label="Senha" />
+			<p:outputLabel value="Nascimento: " for="nascimentoField" />
+			<p:calendar id="nascimentoField"
+				value="#{usuarioBean.entidade.nascimento}" label="Nascimento" />
 
 			<p:commandButton id="btnNovo" value="Novo"
 				action="#{usuarioBean.save()}" ajax="false" />
@@ -42,6 +46,10 @@
 		<p:dataTable id="dataTableEntidades" border="1" var="entidade"
 			value="#{usuarioBean.entidades}">
 			<p:column>
+				<f:facet name="header">ID</f:facet>
+				<h:outputText value="#{entidade.id}" />
+			</p:column>
+			<p:column>
 				<f:facet name="header">Nome</f:facet>
 				<h:outputText value="#{entidade.nome}" />
 			</p:column>
@@ -50,13 +58,13 @@
 				<h:outputText value="#{entidade.email}" />
 			</p:column>
 			<p:column>
-				<f:facet name="header">Senha</f:facet>
-				<h:outputText value="#{entidade.senha}">
-					<f:convertDateTime pattern="123456" />
+				<f:facet name="header">Nascimento</f:facet>
+				<h:outputText value="#{entidade.nascimento}">
+					<f:convertDateTime pattern="dd/MM/yyyy" />
 				</h:outputText>
 			</p:column>
 			<p:column>
-				<f:facet name="header"> Opções </f:facet>
+				<f:facet name="header">Opções</f:facet>
 				<p:commandButton value="Remover" ajax="false"
 					action="#{usuarioBean.remove(entidade)}"></p:commandButton>
 				<p:commandButton value="Editar" ajax="false"

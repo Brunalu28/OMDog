@@ -23,6 +23,11 @@
 			<p:outputLabel value="Id: " for="idField" />
 			<p:inputText id="idField" value="#{usuarioBean.entidade.id}"
 				label="id" style="width:350px" />
+				
+					<p:outputLabel value="conteudo " for="conteudoField" />
+			<p:inputText id="conteudoField" value="#{usuarioBean.entidade.conteudo}"
+				label="conteudo" style="width:350px" />
+				
 
 			<p:commandButton id="btnNovo" value="Novo"
 				action="#{usuarioBean.save()}" ajax="false" />
@@ -36,6 +41,10 @@
 			<p:column>
 				<f:facet name="header">ID</f:facet>
 				<h:outputText value="#{entidade.id}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">CONTEUDO</f:facet>
+				<h:outputText value="#{entidade.conteudo}" />
 			</p:column>
 			
 			

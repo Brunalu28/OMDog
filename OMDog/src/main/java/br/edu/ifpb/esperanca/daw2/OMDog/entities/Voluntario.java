@@ -11,7 +11,7 @@ import javax.persistence.OneToMany;
 @Entity
 public class Voluntario extends Usuario {
 	
-	private String localizaçao;
+	private String localizacao;
 	
 	@OneToMany
 	@JoinColumn(name = "id_Voluntario")
@@ -20,17 +20,17 @@ public class Voluntario extends Usuario {
 	@ManyToMany(mappedBy="possui")
 	private Set<Pets> pets;	
 	
-	public String getLocalizaçao() {
-		return localizaçao;
+	public String getLocalizacao() {
+		return localizacao;
 	}
-	public void setLocalizaçao(String localizaçao) {
-		this.localizaçao = localizaçao;
+	public void setLocalizaçao(String localizacao) {
+		this.localizacao = localizacao;
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + ((localizaçao == null) ? 0 : localizaçao.hashCode());
+		result = prime * result + ((localizacao == null) ? 0 : localizacao.hashCode());
 		result = prime * result + ((pets == null) ? 0 : pets.hashCode());
 		return result;
 	}
@@ -43,10 +43,10 @@ public class Voluntario extends Usuario {
 		if (getClass() != obj.getClass())
 			return false;
 		Voluntario other = (Voluntario) obj;
-		if (localizaçao == null) {
-			if (other.localizaçao != null)
+		if (localizacao == null) {
+			if (other.localizacao != null)
 				return false;
-		} else if (!localizaçao.equals(other.localizaçao))
+		} else if (!localizacao.equals(other.localizacao))
 			return false;
 		if (pets == null) {
 			if (other.pets != null)
