@@ -28,10 +28,6 @@
 			<p:inputText id="emailField" value="#{usuarioBean.entidade.email}"
 				label="email" style="width:350px" />
 
-			<p:outputLabel value="Senha: " for="senhaField" />
-			<p:calendar id="senhaField"
-				value="#{usuarioBean.entidade.senha}" label="Senha" />
-
 			<p:commandButton id="btnNovo" value="Novo"
 				action="#{usuarioBean.save()}" ajax="false" />
 			<p:commandButton id="btnLimpar" value="Limpar"
@@ -49,12 +45,7 @@
 				<f:facet name="header">Email</f:facet>
 				<h:outputText value="#{entidade.email}" />
 			</p:column>
-			<p:column>
-				<f:facet name="header">Senha</f:facet>
-				<h:outputText value="#{entidade.senha}">
-					<f:convertDateTime pattern="123456" />
-				</h:outputText>
-			</p:column>
+
 			<p:column>
 				<f:facet name="header"> Opções </f:facet>
 				<p:commandButton value="Remover" ajax="false"

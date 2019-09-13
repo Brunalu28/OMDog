@@ -26,12 +26,21 @@ public class Usuario implements Identificavel {
 	private String nome;
 	private Date nascimento;
 	private Integer telefone;
+	private String password;
 	
 	@OneToMany(mappedBy="usuario")
 	private List<Postagem> postagens;
 	
 	public Date getNascimento() {
 		return nascimento;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+	
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	public void setNascimento(Date nascimento) {

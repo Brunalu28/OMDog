@@ -35,6 +35,10 @@
 			<p:outputLabel value="Nascimento: " for="nascimentoField" />
 			<p:calendar id="nascimentoField"
 				value="#{usuarioBean.entidade.nascimento}" label="Nascimento" />
+			
+			<p:outputLabel value="Senha: " for="senhaField" />
+			<p:password id="senhaField" value="#{usuarioBean.entidade.password}"
+				label="Nome" style="width:350px" feedback="true" inline="true" />
 
 			<p:commandButton id="btnNovo" value="Novo"
 				action="#{usuarioBean.save()}" ajax="false" />
