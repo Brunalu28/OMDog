@@ -20,11 +20,11 @@
 				<h:outputText value="Usuário" />
 			</f:facet>
 
-			<p:outputLabel value="Nome: " for="nomeField" />
+			<p:outputText value="Nome: " />
 			<p:inputText id="nomeField" value="#{usuarioBean.entidade.nome}"
 				label="Nome" style="width:350px" />
 
-			<p:outputLabel value="E-mail: " for="emailField" />
+			<p:outputLText value="E-mail: " />
 			<p:inputText id="emailField" value="#{usuarioBean.entidade.email}"
 				label="email" style="width:350px" />
 
@@ -52,6 +52,7 @@
 					action="#{usuarioBean.remove(entidade)}"></p:commandButton>
 				<p:commandButton value="Editar" ajax="false"
 					action="#{usuarioBean.editar(entidade.id)}"></p:commandButton>
+				
 			</p:column>
 		</p:dataTable>
 	</h:form>
