@@ -20,11 +20,11 @@
 				<h:outputText value="Usuário" />
 			</f:facet>
 
-			<p:outputText value="Nome: " />
+			<p:outputLabel value="Nome: " for="nomeField" />
 			<p:inputText id="nomeField" value="#{usuarioBean.entidade.nome}"
 				label="Nome" style="width:350px" />
 
-			<p:outputLText value="E-mail: " />
+			<p:outputLabel value="E-mail: " for="emailField" />
 			<p:inputText id="emailField" value="#{usuarioBean.entidade.email}"
 				label="email" style="width:350px" />
 
