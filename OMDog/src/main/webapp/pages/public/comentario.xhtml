@@ -25,8 +25,8 @@
 				label="id" style="width:350px" />
 
 			<p:outputLabel value="Data e Hora: " for="dataHoraField" />
-			<p:inputText id="dataHoraField" value="#{comentarioBean.entidade.dataHora}"
-				label="dataHora" style="width:350px" />
+			<p:calendar id="dataHoraField" value="#{comentarioBean.entidade.dataHora}" pattern="dd/MM/yyyy HH:mm:ss" />
+			
 
 			<p:outputLabel value="Texto: " for="textoField" />
 			<p:inputText id="textoField" value="#{comentarioBean.entidade.texto}"
@@ -48,7 +48,7 @@
 			</p:column>
 			<p:column>
 				<f:facet name="header">Datahora</f:facet>
-				<h:outputText value="#{entidade.datahora}" />
+				<h:outputText value="#{entidade.dataHora}" />
 			</p:column>
 			<p:column>
 				<f:facet name="header">Texto</f:facet>

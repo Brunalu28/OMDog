@@ -21,23 +21,23 @@
 			</f:facet>
 			
 			<p:outputLabel value="Id: " for="idField" />
-			<p:inputText id="idField" value="#{usuarioBean.entidade.id}"
+			<p:inputText id="idField" value="#{postagemBean.entidade.id}"
 				label="id" style="width:350px" />
 				
-					<p:outputLabel value="conteudo " for="conteudoField" />
-			<p:inputText id="conteudoField" value="#{usuarioBean.entidade.conteudo}"
+			<p:outputLabel value="conteudo " for="conteudoField" />
+			<p:fileUpload id="conteudoField" value="#{postagemBean.entidade.conteudo}"
 				label="conteudo" style="width:350px" />
 				
 
 			<p:commandButton id="btnNovo" value="Novo"
-				action="#{usuarioBean.save()}" ajax="false" />
+				action="#{postagemBean.save()}" ajax="false" />
 			<p:commandButton id="btnLimpar" value="Limpar"
-				action="#{usuarioBean.limpar()}" ajax="false" />
+				action="#{postagemBean.limpar()}" ajax="false" />
 		</p:panelGrid>
 
 
 		<p:dataTable id="dataTableEntidades" border="1" var="entidade"
-			value="#{usuarioBean.entidades}">
+			value="#{postagemBean.entidades}">
 			<p:column>
 				<f:facet name="header">ID</f:facet>
 				<h:outputText value="#{entidade.id}" />
@@ -51,9 +51,9 @@
 			<p:column>
 				<f:facet name="header">Opções</f:facet>
 				<p:commandButton value="Remover" ajax="false"
-					action="#{usuarioBean.remove(entidade)}"></p:commandButton>
+					action="#{postagemBean.remove(entidade)}"></p:commandButton>
 				<p:commandButton value="Editar" ajax="false"
-					action="#{usuarioBean.editar(entidade.id)}"></p:commandButton>
+					action="#{postagemBean.editar(entidade.id)}"></p:commandButton>
 			</p:column>
 		</p:dataTable>
 	</h:form>

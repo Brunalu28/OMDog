@@ -28,17 +28,17 @@
 			<p:inputText id="nomeField" value="#{petsBean.entidade.nome}"
 				label="Nome" style="width:350px" />
 
-			<p:outputLabel value="Raca: " for="racaField" />
-			<p:inputText id="racaField" value="#{petsBean.entidade.raca}"
-				label="raca" style="width:350px" />
+			<p:outputLabel value="Raça: " for="raçaField" />
+			<p:inputText id="raçaField" value="#{petsBean.entidade.raça}"
+				label="raça" style="width:350px" />
 
 			<p:outputLabel value="Sexo: " for="sexoField" />
-			<p:calendar id="sexoField"
+			<p:inputText id="sexoField"
 				value="#{petsBean.entidade.sexo}" label="sexo" />
 				
-			<p:outputLabel value="Localizacao: " for="localizacaoField" />
-			<p:calendar id="sexoField"
-				value="#{petsBean.entidade.localizacao}" label="localizacao" />
+			<p:outputLabel value="Localizaçao: " for="localizaçaoField" />
+			<p:inputText id="localizaçaoField"
+				value="#{petsBean.entidade.localizaçao}" label="localizaçao" />
 
 			<p:commandButton id="btnNovo" value="Novo"
 				action="#{petsBean.save()}" ajax="false" />
@@ -59,17 +59,15 @@
 			</p:column>
 			<p:column>
 				<f:facet name="header">Raca</f:facet>
-				<h:outputText value="#{entidade.raca}" />
+				<h:outputText value="#{entidade.raça}" />
 			</p:column>
 			<p:column>
 				<f:facet name="header">Sexo</f:facet>
-				<h:outputText value="#{entidade.sexo}">
+				<h:outputText value="#{entidade.sexo}"/>
 			</p:column>
 				<p:column>
 				<f:facet name="header">Localizacao</f:facet>
-				<h:outputText value="#{entidade.localizacao}" />
-				
-				</h:outputText>
+				<h:outputText value="#{entidade.localizaçao}" />
 			</p:column>
 				
 			<p:column>

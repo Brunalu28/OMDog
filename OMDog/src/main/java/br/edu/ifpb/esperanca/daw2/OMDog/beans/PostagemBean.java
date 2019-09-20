@@ -4,9 +4,14 @@ import java.io.Serializable;
 import java.util.Collection;
 
 import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+
+import org.primefaces.event.FileUploadEvent;
+import org.primefaces.model.UploadedFile;
 
 import br.edu.ifpb.esperanca.daw2.OMDog.entities.Postagem;
 import br.edu.ifpb.esperanca.daw2.services.PostagemService;
@@ -24,6 +29,28 @@ public class PostagemBean implements Serializable {
 
 	public PostagemBean() {
 	}
+	     
+    private UploadedFile file;
+	 
+    public UploadedFile getFile() {
+	        return file;
+	    }
+	 
+    public void setFile(UploadedFile file) {
+	        this.file = file;
+	    }
+	     
+    public void upload() {
+	        if(file != null) {
+	            FacesMessage message = new FacesMessage("Succesful", file.getFileName() + " is uploaded.");
+	            FacesContext.getCurrentInstance().addMessage(null, message);
+	        }
+	    }
+	     
+    public void handleFileUpload(FileUploadEvent event) {
+	        FacesMessage msg = new FacesMessage("Succesful", event.getFile().getFileName() + " is uploaded.");
+	        FacesContext.getCurrentInstance().addMessage(null, msg);
+	    }
 	
 	@PostConstruct
 	public void init() {
@@ -74,6 +101,9 @@ public class PostagemBean implements Serializable {
 	public PostagemService getService() {
 		return service;
 	}
+	
+	
+	
 
 }
 
