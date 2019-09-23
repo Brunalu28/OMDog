@@ -27,9 +27,27 @@ public class Usuario implements Identificavel {
 	private Date nascimento;
 	private Integer telefone;
 	private String password;
+	private String username;
+	private String grupo;
 	
 	@OneToMany(mappedBy="usuario")
 	private List<Postagem> postagens;
+	
+	public String getGrupo() {
+		return grupo;
+	}
+	
+	public void setGrupo(String grupo) {
+		this.grupo = grupo;
+	}
+	
+	public String getUsername() {
+		return username;
+	}
+	
+	public void setUsername(String username) {
+		this.username = username;
+	}
 	
 	public Date getNascimento() {
 		return nascimento;
