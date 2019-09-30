@@ -1,13 +1,13 @@
 package br.edu.ifpb.esperanca.daw2.services;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.security.MessageDigest;
+import java.util.Base64;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
-import br.edu.ifpb.esperanca.daw2.OMDog.entities.Pets;
 import br.edu.ifpb.esperanca.daw2.OMDog.entities.Usuario;
 import br.edu.ifpb.esperanca.daw2.dao.UsuarioDAO;
 import br.edu.ifpb.esperanca.daw2.util.TransacionalCdi;
@@ -29,7 +29,21 @@ public class UserService implements Serializable, Service<Usuario> {
 	@Override
 	@TransacionalCdi
 	public void save(Usuario user) {
+		user.setPassword(hash(user.getPassword()));
 		userDAO.save(user);
+	}
+
+	private String hash(String password) {
+		try {
+			MessageDigest md;
+			md = MessageDigest.getInstance("SHA-256");
+			md.update(password.getBytes("UTF-8"));
+			byte[] digest = md.digest();
+			String output = Base64.getEncoder().encodeToString(digest);
+			return output;
+		} catch (Exception e) {
+			return password;
+		}
 	}
 
 	/* (non-Javadoc)

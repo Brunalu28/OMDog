@@ -17,16 +17,17 @@
 				<h:outputText value="Filtros" />
 			</f:facet>
 			<f:facet name="header">
-				<h:outputText value="Usuário" />
+				<h:outputText value="usuario" />
 			</f:facet>
-
-			<p:outputLabel value="Nome: " for="nomeField" />
+			
+			<p:outputLabel value="nome: " for="nomeField" />
 			<p:inputText id="nomeField" value="#{usuarioBean.entidade.nome}"
-				label="Nome" style="width:350px" />
-
-			<p:outputLabel value="E-mail: " for="emailField" />
+				label="nome" style="width:350px" />
+				
+			<p:outputLabel value="email: " for="emailField" />
 			<p:inputText id="emailField" value="#{usuarioBean.entidade.email}"
 				label="email" style="width:350px" />
+
 
 			<p:commandButton id="btnNovo" value="Novo"
 				action="#{usuarioBean.save()}" ajax="false" />
@@ -37,6 +38,7 @@
 
 		<p:dataTable id="dataTableEntidades" border="1" var="entidade"
 			value="#{usuarioBean.entidades}">
+			
 			<p:column>
 				<f:facet name="header">Nome</f:facet>
 				<h:outputText value="#{entidade.nome}" />
@@ -45,14 +47,13 @@
 				<f:facet name="header">Email</f:facet>
 				<h:outputText value="#{entidade.email}" />
 			</p:column>
-
+			
 			<p:column>
-				<f:facet name="header"> Opções </f:facet>
+				<f:facet name="header">Opções</f:facet>
 				<p:commandButton value="Remover" ajax="false"
 					action="#{usuarioBean.remove(entidade)}"></p:commandButton>
 				<p:commandButton value="Editar" ajax="false"
 					action="#{usuarioBean.editar(entidade.id)}"></p:commandButton>
-				
 			</p:column>
 		</p:dataTable>
 	</h:form>

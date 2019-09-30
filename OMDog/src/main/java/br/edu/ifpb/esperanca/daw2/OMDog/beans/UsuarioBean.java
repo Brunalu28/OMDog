@@ -2,6 +2,7 @@ package br.edu.ifpb.esperanca.daw2.OMDog.beans;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
@@ -23,6 +24,7 @@ public class UsuarioBean implements Serializable {
 	protected Collection<Usuario> entidades;
 
 	public UsuarioBean() {
+		
 	}
 	
 	@PostConstruct
