@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title> Configuracao </title>
+</h:head>
+
+
+<h:body>
+	<p:messages />
+
+	<h:form>
+		<p:panelGrid columns="2" >
+			<f:facet name="caption">
+				<h:outputText value="Filtros" />
+			</f:facet>
+			<f:facet name="header">
+				<h:outputText value="Pets" />
+			</f:facet>
+			
+			<p:button outcome= "productDetail" value="RELATAR ALGUM PROBLEMA " style="margin-right:20px;">
+			<f:param name="productId" value="10" />
+			<p:inputText id="idField" value="#{petsBean.entidade.id}"
+				label="id" style="width:350px" />
+				</p:button>
+	
+
+			<p:outputLabel value="Nome: " for="nomeField" />
+			<p:inputText id="nomeField" value="#{petsBean.entidade.nome}"
+				label="Nome" style="width:350px" />
+
+			<p:outputLabel value="Raça: " for="raçaField" />
+			<p:inputText id="raçaField" value="#{petsBean.entidade.raça}"
+				label="raça" style="width:350px" />
+
+			<p:outputLabel value="Sexo: " for="sexoField" />
+			<p:inputText id="sexoField"
+				value="#{petsBean.entidade.sexo}" label="sexo" />
+				
+			<p:outputLabel value="Localizaçao: " for="localizaçaoField" />
+			<p:inputText id="localizaçaoField"
+				value="#{petsBean.entidade.localizaçao}" label="localizaçao" />
+
+			<p:commandButton id="btnNovo" value="Novo"
+				action="#{petsBean.save()}" ajax="false" />
+			<p:commandButton id="btnLimpar" value="Limpar"
+				action="#{petsBean.limpar()}" ajax="false" />
+		</p:panelGrid>
+
+
+		<p:dataTable id="dataTableEntidades" border="1" var="entidade"
+			value="#{petsBean.entidades}">
+			<p:column>
+				<f:facet name="header">ID</f:facet>
+				<h:outputText value="#{entidade.id}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">Nome</f:facet>
+				<h:outputText value="#{entidade.nome}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">Raca</f:facet>
+				<h:outputText value="#{entidade.raça}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">Sexo</f:facet>
+				<h:outputText value="#{entidade.sexo}"/>
+			</p:column>
+				<p:column>
+				<f:facet name="header">Localizacao</f:facet>
+				<h:outputText value="#{entidade.localizaçao}" />
+			</p:column>
+				
+			<p:column>
+				<f:facet name="header">Opções</f:facet>
+				<p:commandButton value="Remover" ajax="false"
+					action="#{petsBean.remove(entidade)}"></p:commandButton>
+				<p:commandButton value="Editar" ajax="false"
+					action="#{petsBean.editar(entidade.id)}"></p:commandButton>
+			</p:column>
+		</p:dataTable>
+	</h:form>
+</h:body>
+</html>
