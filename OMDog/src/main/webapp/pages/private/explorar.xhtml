@@ -17,7 +17,7 @@
 				<h:outputText value="Filtros" />
 			</f:facet>
 			<f:facet name="header">
-				<h:outputText value="Usuário" />
+				<h:outputText value="Explorar" />
 			</f:facet>
 
 			<p:outputLabel value="Nome: " for="nomeField" />
@@ -44,12 +44,6 @@
 			<p:column>
 				<f:facet name="header">Email</f:facet>
 				<h:outputText value="#{entidade.email}" />
-			</p:column>
-			<p:column>
-				<f:facet name="header">Senha</f:facet>
-				<h:outputText value="#{entidade.senha}">
-					<f:convertDateTime pattern="123456" />
-				</h:outputText>
 			</p:column>
 			<p:column>
 				<f:facet name="header"> Opções </f:facet>

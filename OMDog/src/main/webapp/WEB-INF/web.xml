@@ -18,7 +18,7 @@
 		<param-value>casablanca</param-value>
 	</context-param>
 	<welcome-file-list>
-		<welcome-file>/pages/private/gerenciadorUsuario.xhtml</welcome-file>
+		<welcome-file>/pages/private/explorar.xhtml</welcome-file>
 	</welcome-file-list>
 	<session-config>
 		<session-timeout>1</session-timeout>

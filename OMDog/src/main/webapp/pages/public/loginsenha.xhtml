@@ -4,7 +4,7 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<title> Cadastro do usuario </title>
+	<title> Login e Senha </title>
 </h:head>
 
 
@@ -17,30 +17,18 @@
 				<h:outputText value="Filtros" />
 			</f:facet>
 			<f:facet name="header">
-				<h:outputText value="Cadastro de usuario" />
+				<h:outputText value="Login e Senha" />
 			</f:facet>
-
-			<p:outputLabel value="Nome: " for="nomeField" />
-			<p:inputText id="nomeField" value="#{usuarioBean.entidade.nome}"
-				label="Nome" style="width:350px" />
-				
-				<p:outputLabel value="Username: " for="usernameField" />
+				<p:outputLabel value="Novo Username: " for="usernameField" />
 			<p:inputText id="usernameField" value="#{usuarioBean.entidade.username}"
 				label="username" style="width:350px" />
 
-			<p:outputLabel value="Email: " for="emailField" />
-			<p:inputText id="emailField" value="#{usuarioBean.entidade.email}"
-				label="email" style="width:350px" />
-		
-	<p:outputLabel for="console" value="Você faz parte de qual grupo:" />
-			<p:selectOneRadio id="console" value="#{usuarioBean.entidade.grupo}"
-				unselectable="true">
-				<f:selectItem itemLabel="VOLUNTARIO" itemValue="VOLUNTARIO" />
-				<f:selectItem itemLabel="ADOTANTE" itemValue="ADOTANTE" />
-			</p:selectOneRadio>
-				
 			<p:outputLabel value="Password: " for="passwordField" />
 			<p:password id="passwordField" value="#{usuarioBean.entidade.password}" feedback="true" inline="true" />	
+			
+				<p:outputLabel value="Confirmar password: " for="passwordField" />
+			<p:password id="newpasswordField" value="#{usuarioBean.entidade.password}" feedback="true" inline="true" />	
+
 
 			<p:commandButton id="btnNovo" value="Novo"
 				action="#{usuarioBean.save()}" ajax="false" />
@@ -52,25 +40,17 @@
 		<p:dataTable id="dataTableEntidades" border="1" var="entidade"
 			value="#{usuarioBean.entidades}">
 			<p:column>
-				<f:facet name="header">Nome</f:facet>
-				<h:outputText value="#{entidade.nome}" />
-			</p:column>
-			<p:column>
 				<f:facet name="header">username</f:facet>
 				<h:outputText value="#{entidade.username}"/>
 			</p:column>		
 			<p:column>
-				<f:facet name="header">email</f:facet>
-				<h:outputText value="#{entidade.email}" />
-			</p:column>
-			<p:column>
-				<f:facet name="header">grupo</f:facet>
-				<h:outputText value="#{entidade.grupo}" />
-			</p:column>
-			<p:column>
 				<f:facet name="header">password</f:facet>
 				<h:outputText value="#{entidade.password}"/>
 			</p:column>				
+			<p:column>
+				<f:facet name="header">password</f:facet>
+				<h:outputText value="#{entidade.password}"/>
+			</p:column>		
 			<p:column>
 				<f:facet name="header">Opções</f:facet>
 				<p:commandButton value="Remover" ajax="false"
