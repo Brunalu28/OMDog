@@ -33,12 +33,18 @@
 				label="raça" style="width:350px" />
 
 			<p:outputLabel value="Sexo: " for="sexoField" />
-			<p:inputText id="sexoField"
-				value="#{petsBean.entidade.sexo}" label="sexo" />
+			<p:inputText id="sexoField" value="#{petsBean.entidade.sexo}" label="sexo" />
 				
-			<p:outputLabel value="Localizaçao: " for="localizaçaoField" />
-			<p:inputText id="localizaçaoField"
-				value="#{petsBean.entidade.localizaçao}" label="localizaçao" />
+			<p:outputLabel value="Localização: " for="localizaçaoField" />
+			<p:inputText id="localizaçaoField" value="#{petsBean.entidade.localizaçao}" label="localizaçao" />
+				
+				<p:outputLabel value="Tamanho: " for="tamanhoField" />
+			<p:inputText id="tamanhoField" value="#{petsBean.entidade.tamanho}"
+				label="tamanho" style="width:350px" />
+				
+				<p:outputLabel value="Possui Deficiencia: " for="deficienciaField" />
+			<p:inputText id="deficienciaField" value="#{petsBean.entidade.deficiencia}"
+				label="deficiencia" style="width:350px" />
 
 			<p:commandButton id="btnNovo" value="Novo"
 				action="#{petsBean.save()}" ajax="false" />
@@ -68,6 +74,14 @@
 				<p:column>
 				<f:facet name="header">Localizacao</f:facet>
 				<h:outputText value="#{entidade.localizaçao}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">Tamanho</f:facet>
+				<h:outputText value="#{entidade.tamanho}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">Deficiencia</f:facet>
+				<h:outputText value="#{entidade.deficiencia}" />
 			</p:column>
 				
 			<p:column>

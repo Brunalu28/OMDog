@@ -22,6 +22,12 @@
 		</repository>
 	</repositories>
 	<dependencies>
+		<dependency>
+			<groupId>com.github.adminfaces</groupId>
+			<artifactId>admin-theme</artifactId>
+			<version>1.0.0</version>
+			<!--<classifier>dev</classifier> uncompressed theme.css -->
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/javax/javaee-api -->
 		<dependency>
 			<groupId>javax</groupId>
