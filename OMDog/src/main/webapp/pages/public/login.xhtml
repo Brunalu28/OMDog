@@ -17,8 +17,7 @@
 		style="width: 30%; text-align:center; margin: auto;">
 		<h:form id="formLogin" prependId="false"
 			onsubmit="action='j_security_check';">
-                <p:graphicImage value="./imagens/OMDog.png" /> 
-        
+			<p:graphicImage value="./imagens/OMDog.png" />
 			<h:panelGrid columns="2" style="text-align:center; margin: auto;">
 				<h:outputLabel for="j_username" value="Login:" />
 				<h:inputText id="j_username" />
@@ -27,9 +26,9 @@
 				<h:inputSecret id="j_password" />
 				<p:commandButton id="btnLogin" value="Login" ajax="false"
 					icon="fa fa-sign-in" />
-					
-				<p:link  outcome="cadastro.xhtml" value="Cadastre-se">
-  			    <f:param name="productId" value="10" />
+
+				<p:link outcome="cadastro.xhtml" value="Cadastre-se">
+					<f:param name="productId" value="10" />
 				</p:link>
 			</h:panelGrid>
 		</h:form>
