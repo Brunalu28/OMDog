@@ -20,7 +20,7 @@
 				<h:outputText value="Adicione seu Relato" />
 			</f:facet>
 
-			<p:outputLabel value="Relatar algum problema: " for="comentarioField" />
+			<p:outputLabel value="Relatar algum problema: " for="comentariodousuarioField" />
 			<p:inputText id="comentariodousuarioField"
 				value="#{UsuarioBean.entidade.comentariodousuario}"
 				label="Adicionar comentario sobre o site" style="width:350px" />
@@ -37,9 +37,9 @@
 
 			<p:outputLabel
 				value="Deixe um comentario referente a sua Avaliação: "
-				for="avaliacaoField" />
-			<p:inputText id="avaliacaoField"
-				value="#{UsuarioBean.entidade.avaliacaodousuario}" label="avaliacao"
+				for="avaliacaodousuarioField" />
+			<p:inputText id="avaliacaodousuarioField"
+				value="#{UsuarioBean.entidade.avaliacaodousuario}" label="avaliacao do usuario"
 				style="width:350px" />
 
 		</p:panelGrid>
@@ -55,11 +55,11 @@
 		value="#{UsuarioBean.entidades}">
 		<p:column>
 			<f:facet name="header">Comentario</f:facet>
-			<h:outputText value="#{entidade.id}" />
+			<h:outputText value="#{entidade.comentariodousuario}" />
 		</p:column>
 		<p:column>
 			<f:facet name="header">Avaliacao</f:facet>
-			<h:outputText value="#{entidade.texto}" />
+			<h:outputText value="#{entidade.avaliacaodousuario}" />
 		</p:column>
 
 		<p:column>
